@@ -501,6 +501,8 @@
 | 태스크 생성() : void | 팀장 |
 | 진행 상태 변경() : void | 팀원 |
 | 담당자 조회() : void | 사용자 |
+| 마감일 변경() : void |
+| 담당자 변경() : void |
 | 댓글 목록 조회() : void | 댓글 |
 
 **속성 (Attributes)**
@@ -742,7 +744,7 @@ ch08 강의자료의 ABCD 규칙에 따라 참여 객체를 Actor → Boundary �
 ![8.png](8.png)
 ---
 
-#### 3.3.4 태스크 진행 상태를 변경한다 (U_06)
+#### 3.3.4 태스크 정보를 변경한다 (U_06)
 
 **참여 객체**
 
@@ -756,7 +758,7 @@ ch08 강의자료의 ABCD 규칙에 따라 참여 객체를 Actor → Boundary �
 **메시지 흐름**
 
 1. 팀원 → TaskListUI : 태스크 선택 후 드롭다운에서 상태 선택
-2. TaskListUI → TaskController : updateStatus(taskId, newStatus)
+2. TaskListUI → TaskController : updateTask(taskId, field, value)
 3. TaskController → TaskDB : update(taskId, status)
 4. TaskDB → TaskController : return updated
 5. TaskController → TaskListUI : success
